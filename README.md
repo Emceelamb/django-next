@@ -1,6 +1,8 @@
 # Django Rest Framework + Next.js + Tailwind
 
-This is a simple Django Rest Framework with Next.js front-end implementation.
+This is a simple Django Rest Framework with Next.js front-end implementation of a Todo app. It has CRUD operations for Django APIs and API wrappers in Next.js.
+
+The running the `next` server in development mode will proxy requests to `/api` to port `8000`.
 
 Includes the following:
 

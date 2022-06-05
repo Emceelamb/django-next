@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import ArticleView
+from .views import TodoView
 
 urlpatterns = [
-  path('articles/', ArticleView.as_view()),
-  path('articles/<int:id>', ArticleView.as_view()),
+  path('todos/', TodoView.as_view()),
+  path('todos/<int:id>', TodoView.as_view()),
 ]

@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from .models import Article
+from .models import Todo 
 
-class ArticleSerializer(serializers.ModelSerializer):
-    article_name = serializers.CharField(max_length=320)
-    article_doi = serializers.CharField(max_length=40)
+class TodoSerializer(serializers.ModelSerializer):
+    todo  = serializers.CharField(max_length=320)
+    status  = serializers.CharField(max_length=32, default='To Do')
     
     class Meta:
-        model = Article
+        model = Todo 
         fields = ('__all__')

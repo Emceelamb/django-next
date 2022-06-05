@@ -2,9 +2,20 @@ from django.db import models
 
 # Create your models here.
 
-class Article(models.Model):
-    article_name = models.CharField(max_length=320)
-    article_doi = models.CharField(max_length=40)
+class Todo(models.Model):
+    todo  = models.CharField(max_length=320)
+
+    STATUS_CHOICES = [
+        ('TD', 'To Do'),
+        ('IP', 'In Progress'),
+        ('DN', 'Done'),
+    ]
+
+    status = models.CharField(
+            max_length=2,
+            choices=STATUS_CHOICES,
+            default='TD'
+    )
 
     def __str__(self):
-        return self.article_name
+        return self.todo
