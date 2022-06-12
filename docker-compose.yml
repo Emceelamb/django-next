@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  backend:
+    build: ./backend
+    image: django-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/code
+    command: bash -c "python3 manage.py collectstatic --noinput --clear; gunicorn  -w 2 --bind :8000 app.wsgi --reload"
+
+  nginx:
+    image: nginx:1.15-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    restart: unless-stopped
