@@ -3,7 +3,7 @@ import axios from "axios";
 const baseUrl = process.env.BASE_URL || "/api/todos/";
 
 const makeUrl = (endpoint: string | string[] | number | number[]) => {
-  return `${baseUrl}/${endpoint}`;
+  return baseUrl + endpoint;
 };
 
 type Data = {

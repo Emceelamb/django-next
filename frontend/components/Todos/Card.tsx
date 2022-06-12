@@ -58,9 +58,9 @@ export const Card = (props: TodoType) => {
     handlePatch();
   };
 
-  useEffect(() => {
-    handlePatch();
-  }, [status]);
+  /* useEffect(() => { */
+  /*   handlePatch(); */
+  /* }, [status]); */
 
   return (
     <li className="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">

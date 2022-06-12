@@ -1,6 +1,16 @@
 version: '3'
 
 services:
+  frontend:
+    build: ./frontend
+    image: next-backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/code
+    command: bash -c "npm run dev"
+
   backend:
     build: ./backend
     image: django-backend
