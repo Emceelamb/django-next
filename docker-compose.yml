@@ -3,7 +3,7 @@ version: '3'
 services:
   frontend:
     build: ./frontend
-    image: next-backend
+    image: next-frontend
     restart: unless-stopped
     ports:
       - "3000:3000"
@@ -19,6 +19,7 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/code
+      - ./backend/db:/code/db
     command: bash -c "python3 manage.py collectstatic --noinput --clear; gunicorn  -w 2 --bind :8000 app.wsgi --reload"
 
   nginx:

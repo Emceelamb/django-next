@@ -2,3 +2,4 @@ django
 django-rest-framework
 django-cors-headers
 gunicorn
+django-environ

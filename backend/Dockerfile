@@ -12,8 +12,9 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY . ./
 
+ENV DATABASE_PATH=$DATABASE_PATH
+
 RUN pip install --upgrade pip
-RUN pip install pipenv
 RUN pip install -r ./requirements.txt
 
 RUN python manage.py makemigrations
