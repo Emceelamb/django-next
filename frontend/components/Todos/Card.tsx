@@ -50,7 +50,8 @@ export const Card = (props: TodoType) => {
         setStatus("To Do");
         break;
     }
-    // setTimeout(()=>{handlePatch()}, 1000);
+  // setTimeout(()=>{handlePatch()}, 1000);
+    // handlePatch()
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -58,9 +59,9 @@ export const Card = (props: TodoType) => {
     handlePatch();
   };
 
-  /* useEffect(() => { */
-  /*   handlePatch(); */
-  /* }, [status]); */
+   useEffect(() => { 
+     handlePatch(); 
+   }, [status]); 
 
   return (
     <li className="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
